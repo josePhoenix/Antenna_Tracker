@@ -22,7 +22,7 @@ import math
 import serial
 import time
 import geomag
-import MySQLdb                      # database section, help from: http://www.tutorialspoint.com/python/python_database_access.htm
+import pymysql
 import pyqtgraph as pg
 import numpy as np
 from datetime import *
@@ -170,7 +170,7 @@ db_host = "153.90.202.22"
 db_user = "scott"
 db_passwd = "Jewe1947"
 db_name = "freemanproject"
-db = MySQLdb.connect(host="153.90.202.22",user="scott",passwd="Jewe1947",db="freemanproject")
+db = pymysql.connect(host="153.90.202.22", user="scott", passwd="Jewe1947", db="freemanproject")
 IMEI = "300234063047450"
     #prepare a cursor object using cursor() method
 cursor = db.cursor()
@@ -918,7 +918,7 @@ def getIridium():
     #try:
 
     #SQL Access to access iridium packet information
-    db_local = MySQLdb.connect(host=db_host,user=db_user,passwd=db_passwd,db=db_name)
+    db_local = pymysql.connect(host=db_host, user=db_user, passwd=db_passwd, db=db_name)
     #prepare a cursor object using cursor() method
     cursor = db_local.cursor()
     #sql = "select gps_fltDate,gps_time,gps_lat,gps_long,gps_alt from gps where pri_key = (select max(pri_key) from gps) and gps_IMEI = "+IMEI
