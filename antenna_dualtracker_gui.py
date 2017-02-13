@@ -243,7 +243,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.refresh()
 
     def pointToTarget(self):
-        global groundAlt, groundLat, groungLon
+        global groundAlt, groundLat, groundLon
         if self.pointAlt.text() == "":
             pointtoAlt = float(self.pointAlt.placeholderText())
         else:
