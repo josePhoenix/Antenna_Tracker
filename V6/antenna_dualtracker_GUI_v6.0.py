@@ -30,12 +30,13 @@ import time
 import smtplib
 from email.mime.text import *
 import matplotlib
+matplotlib.rcParams['backend.qt4'] = 'PySide'
+matplotlib.use('Qt4Agg')
 
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_qt4agg import FigureCanvasQTAgg as FigureCanvas
 
-matplotlib.use('Qt4Agg')
-matplotlib.rcParams['backend.qt4']='PySide'
+
 
 #import matplotlib.pyplot as plt
 import ast
